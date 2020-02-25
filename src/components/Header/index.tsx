@@ -1,14 +1,12 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable object-curly-newline */
 import React from 'react';
 // import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import logo from '../../assets/logo.svg';
+// import logo from '../../assets/logo.svg';
 
 import { Container, Content, StyledLink, Profile } from './styles';
 
-export default function Header() {
+const Header: React.FC = () => {
   // const profile = useSelector(state => state.auth.user);
   const image = '';
 
@@ -20,11 +18,11 @@ export default function Header() {
     <Container>
       <Content>
         <nav>
-          <img src={logo} alt="TechnoApp" />
+          {/* <img src={logo} alt="TechnoApp" /> */}
           <StyledLink to="/dashboard">TechnoApp</StyledLink>
           <StyledLink to="/dashboard">Solicitações</StyledLink>
           <StyledLink to="/clients">Clientes</StyledLink>
-          <StyledLink to="/services">Serviços</StyledLink>
+          <StyledLink to="/settings">Configurações</StyledLink>
         </nav>
 
         <aside>
@@ -44,4 +42,6 @@ export default function Header() {
       </Content>
     </Container>
   );
-}
+};
+
+export default Header;
