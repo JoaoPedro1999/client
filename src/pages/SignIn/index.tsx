@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import * as Yup from 'yup';
+import { ApplicationState } from '../../store';
+// import * as Yup from 'yup';
 import Input from '../../components/Input';
 
-// import { signInRequest } from '../../store/modules/auth/actions';
-// import logo from '../../assets/logo.svg';
+import { signInRequest } from '../../store/modules/auth/actions';
 
 // const schema = Yup.object().shape({
 //   email: Yup.string()
@@ -15,26 +15,24 @@ import Input from '../../components/Input';
 //   password: Yup.string().required('A senha é obrigatória'),
 // });
 
-interface FormData {
+interface User {
   email: string;
   password: string;
 }
 
 const SignIn: React.FC = () => {
-  // const dispatch = useDispatch();
-  // const loading = useSelector(state => state.auth.loading);
+  const dispatch = useDispatch();
+  const loading = useSelector((state: ApplicationState) => state.auth.loading);
 
-  // function handleSubmit({ email, password }) {
-  //   dispatch(signInRequest(email, password));
-  // }
+  function handleSubmit({ email, password }: User) {
+    dispatch(signInRequest(email, password));
+  }
 
   const formRef = useRef<FormHandles>(null);
 
   return (
     <>
-      {/* <img src={logo} alt="TechnoApp" /> */}
-
-      <Form ref={formRef} onSubmit={() => {}}>
+      <Form ref={formRef} onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <Input
           name="password"
@@ -42,8 +40,7 @@ const SignIn: React.FC = () => {
           placeholder="Sua senha secreta"
         />
 
-        {/* <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button> */}
-        <button type="submit">Acessar</button>
+        <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
       </Form>
     </>
   );

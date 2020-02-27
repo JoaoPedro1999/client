@@ -10,11 +10,7 @@ interface Props extends RouteProps {
   isPrivate?: boolean;
 }
 
-const RouterWrapper: React.FC<Props> = (
-  component,
-  isPrivate = false,
-  ...rest
-) => {
+export default function RouteWrapper({ component, isPrivate, ...rest }: Props) {
   // const signed = useSelector((state: ApplicationState) => state.auth.signed);
 
   const signed = false;
@@ -41,6 +37,35 @@ const RouterWrapper: React.FC<Props> = (
       )}
     />
   );
-};
+}
 
-export default RouterWrapper;
+// export default RouterWrapper;
+
+// export default function RouteWrapper({
+//   component: Component,
+//   isPrivate,
+//   ...rest
+// }) {
+//   const { signed } = store.getState().auth;
+
+//   if (!signed && isPrivate) {
+//     return <Redirect to="/" />;
+//   }
+
+//   if (signed && !isPrivate) {
+//     return <Redirect to="/dashboard" />;
+//   }
+
+//   const Layout = signed ? DefaultLayout : AuthLayout;
+
+//   return (
+//     <Route
+//       {...rest}
+//       render={props => (
+//         <Layout>
+//           <Component {...props} />
+//         </Layout>
+//       )}
+//     />
+//   );
+// }
