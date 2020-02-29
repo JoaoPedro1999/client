@@ -1,12 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 
-import { Input as input } from './styles';
+import { LabelStyled } from './styles';
 
 interface Props {
   name: string;
   label?: string;
 }
+
+const InputStyled = {
+  background: 'rgba(0, 0, 0, 0.2)',
+  border: '0.5px solid #fff',
+  borderRadius: '4px',
+  height: '44px',
+  padding: '0 15px',
+  color: '#fff',
+  margin: '0 0 10px',
+};
 
 type InputProps = JSX.IntrinsicElements['input'] & Props;
 
@@ -25,9 +35,10 @@ const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
 
   return (
     <>
-      {label && <label htmlFor={fieldName}>{label}</label>}
+      {label && <LabelStyled htmlFor={fieldName}>{label}</LabelStyled>}
 
       <input
+        style={InputStyled}
         id={fieldName}
         ref={inputRef}
         defaultValue={defaultValue}
