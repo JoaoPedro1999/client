@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { RouteProps } from 'react-router-dom';
 
 import { Wrapper, Content } from './styles';

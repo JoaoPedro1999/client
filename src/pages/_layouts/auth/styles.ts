@@ -3,7 +3,12 @@ import { darken } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: linear-gradient(-180deg, #18448f, #f8e738);
+  /* background: linear-gradient(-180deg, #18448f, #f8e738); */
+  background: linear-gradient(
+    -180deg,
+    ${props => props.theme.colors.primary},
+    ${props => props.theme.colors.secundary}
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +48,7 @@ export const Content = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #18448f;
+      background: ${props => props.theme.colors.button};
       font-weight: bold;
       color: #fff;
       border: 0;

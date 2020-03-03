@@ -18,9 +18,9 @@ export const Container = styled.div`
       margin-left: 10px;
       height: 42px;
       width: 172px;
-      background: #18448f;
+      background: ${props => props.theme.colors.primary};
       font-weight: bold;
-      color: #fff;
+      color: #${props => props.theme.colors.background};
       border: 0;
       border-radius: 4px;
       font-size: 16px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
       }
     }
     strong {
-      color: #18448f;
+      color: ${props => props.theme.colors.primary};
       font-size: 32px;
       margin: 0;
     }
@@ -48,30 +48,30 @@ export const Container = styled.div`
 export const SolicitationHeader = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space - between;
   max-width: 940px;
   padding: 20px;
   margin-top: 30px;
   span {
-    color: #18448f;
+    color: ${props => props.theme.colors.primary};
     margin: 0;
   }
 `;
 
 export const Solicitation = styled.li`
   display: flex;
-  justify-content: space-between;
+  justify-content: space - between;
   align-items: center;
   margin-top: 5px;
   padding: 20px;
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.03);
-  border: 1px solid #18448f;
+  border: 1px solid ${props => props.theme.colors.primary};
   strong {
-    color: #18448f;
+    color: ${props => props.theme.colors.primary};
     font-weight: bold;
   }
   span {
-    color: #18448f;
+    color: ${props => props.theme.colors.primary};
   }
 `;

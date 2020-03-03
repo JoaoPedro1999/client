@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  background: #18448f;
+  background: ${props => props.theme.colors.primary};
   padding: 0 30px;
 `;
 
@@ -20,7 +20,7 @@ export const Content = styled.div`
       width: 48px;
       margin-right: 20px;
       padding-right: 20px;
-      border-right: 1px solid #eee;
+      border-right: 1px solid ${props => props.theme.colors.background};
     }
   }
   aside {
@@ -33,14 +33,14 @@ export const StyledLink = styled(Link)`
   margin-right: 20px;
   font-size: 1.4em;
   font-weight: bold;
-  color: #fff;
+  color: ${props => props.theme.colors.background};
 `;
 
 export const Profile = styled.div`
   display: flex;
   margin-left: 20px;
   padding-left: 20px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid ${props => props.theme.colors.background};
   div {
     text-align: right;
     margin-right: 10px;
