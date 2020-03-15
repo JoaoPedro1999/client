@@ -45,33 +45,35 @@ export const Container = styled.div`
   }
 `;
 
-export const SolicitationHeader = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space - between;
-  max-width: 940px;
-  padding: 20px;
-  margin-top: 30px;
-  span {
-    color: ${props => props.theme.colors.primary};
-    margin: 0;
-  }
+export const Solicitation = styled.ul`
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  grid-gap: 15px;
+  margin-top: 70px;
 `;
 
-export const Solicitation = styled.li`
-  display: flex;
-  justify-content: space - between;
-  align-items: center;
-  margin-top: 5px;
-  padding: 20px;
+export const SolicitationInfo = styled.li`
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 0.5px solid ${props => props.theme.colors.primary};
+  border-bottom: 5px solid ${props => props.theme.colors.primary};
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid ${props => props.theme.colors.primary};
-  strong {
-    color: ${props => props.theme.colors.primary};
-    font-weight: bold;
-  }
-  span {
-    color: ${props => props.theme.colors.primary};
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    width: 100%;
+
+    h1 {
+      align-self: center;
+      color: ${props => props.theme.colors.text};
+      font-size: 18px;
+    }
   }
 `;

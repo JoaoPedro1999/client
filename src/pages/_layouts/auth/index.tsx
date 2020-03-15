@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { RouteProps } from 'react-router-dom';
+import React from 'react';
 
 import { Wrapper, Content } from './styles';
 
-export default function AuthLayout({ children }: RouteProps) {
+const AuthLayout: React.FC = ({ children }) => {
   return (
     <Wrapper>
       <Content>{children}</Content>
     </Wrapper>
   );
-}
+};
+
+export default AuthLayout;

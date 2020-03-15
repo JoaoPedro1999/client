@@ -46,7 +46,7 @@ export const Profile = styled.div`
     margin-right: 10px;
     strong {
       display: block;
-      color: #333;
+      color: ${props => props.theme.colors.background};
     }
     a {
       display: block;

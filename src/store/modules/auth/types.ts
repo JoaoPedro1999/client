@@ -1,12 +1,13 @@
 export interface User {
-  name: string;
-  email: string;
+  name: string | undefined;
+  email: string | undefined;
 }
 
 export interface SignState {
   token: string | undefined;
   signed: boolean;
   loading: boolean;
+  user?: User;
 }
 
 export interface ReducerAction {

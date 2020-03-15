@@ -6,6 +6,10 @@ const INITIAL_STATE: SignState = {
   token: undefined,
   signed: false,
   loading: false,
+  user: {
+    name: undefined,
+    email: undefined,
+  },
 };
 
 export default function auth(state = INITIAL_STATE, action: ReducerAction) {
@@ -20,6 +24,7 @@ export default function auth(state = INITIAL_STATE, action: ReducerAction) {
         draft.token = payload && payload.token;
         draft.signed = true;
         draft.loading = false;
+        draft.user = payload?.user;
         break;
       }
       case '@auth/SIGN_FAILURE': {

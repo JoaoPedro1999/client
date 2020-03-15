@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Container = styled.div`
   position: fixed;
@@ -13,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background: #36393f;
+  background: ${props => props.theme.colors.secundary};
   border-radius: 5px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 40px;
@@ -28,29 +29,45 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    > span {
-      color: #b9bbbe;
-      font-size: 14px;
-      line-height: 16px;
-      font-weight: 600;
-      margin-top: 15px;
-    }
-    > input {
-      height: 40px;
-      padding: 10px;
-      border-radius: 3px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      background-color: rgba(0, 0, 0, 0.1);
-      color: #f6f6f6;
-      margin-top: 8px;
-      transition: border 0.15s ease;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px 0 0;
+      height: 44px;
+      background: ${props => props.theme.colors.button};
+      font-weight: bold;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
       font-size: 16px;
-      &:focus {
-        border-color: #7289da;
+      transition: background 0.2s;
+      &:hover {
+        background: ${darken(0.03, '#18448F')};
       }
     }
-    > button {
-      margin: 20px 0 0;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 0;
+    height: 44px;
+    width: 520px;
+    background: ${darken(0.13, 'red')};
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.2s;
+    &:hover {
+      background: ${darken(0.23, 'red')};
+    }
+    span {
+      padding-left: 5px;
     }
   }
 `;

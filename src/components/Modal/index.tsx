@@ -1,11 +1,16 @@
 import React from 'react';
-import { RouteProps } from 'react-router-dom';
 import { Container, Content } from './styles';
 
-export default function Modal({ children }: RouteProps) {
+interface Props {
+  size: string;
+}
+
+const Modal: React.FC = ({ children }) => {
   return (
     <Container>
       <Content>{children}</Content>
     </Container>
   );
-}
+};
+
+export default Modal;

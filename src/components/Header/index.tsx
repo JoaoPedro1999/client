@@ -1,13 +1,14 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ApplicationState } from '../../store';
 
 // import logo from '../../assets/logo.svg';
 
 import { Container, Content, StyledLink, Profile } from './styles';
 
 const Header: React.FC = () => {
-  // const profile = useSelector(state => state.auth.user);
+  const profile = useSelector((state: ApplicationState) => state.auth.user);
   const image = '';
 
   // if (profile.avatar) {
@@ -28,7 +29,7 @@ const Header: React.FC = () => {
         <aside>
           <Profile>
             <div>
-              <strong>Nome</strong>
+              <strong>{profile?.name}</strong>
               <Link to="/profile">Meu perfil</Link>
             </div>
             <img
